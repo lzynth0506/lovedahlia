@@ -20,9 +20,9 @@ export default class Login extends Component {
                             <input type={'password'} className="border border-black p-2 px-4 rounded-lg" required />
                         </div>
                         <div className="mb-4">
-                            <Link href="/forgotuser" className="text-red-500">
+                            <button onClick={() => console.log("directme")}className="text-red-500">
                                 Forgot password?
-                            </Link>
+                            </button>
                         </div>
                         <button className="w-full text-center bg-red-500 p-2 rounded-lg font-bold text-white mb-4">
                             Log In

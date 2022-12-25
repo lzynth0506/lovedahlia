@@ -5,12 +5,12 @@ import { DropdownDate, DropdownComponent } from "react-dropdown-date";
 export default class Register extends Component {
     constructor(props) {
         super(props);
-        this.state = { date: null, selectedDate: '2012-11-15' };
+        this.state = { date: null, selectedDate: '1900-1-1' };
     }
 
     render() {
         const formatDate = (date) => {
-            var d = new Date(date),
+            let d = new Date(date),
               month = "" + (d.getMonth() + 1),
               day = "" + d.getDate(),
               year = d.getFullYear();
@@ -25,24 +25,24 @@ export default class Register extends Component {
             <section className="bg-[url('/assets/background-login.png')] bg-no-repeat bg-cover relative w-screen h-screen">
                 <main className="grid h-screen place-items-center">
                     <form className="p-12 bg-white rounded-2xl w-100">
-                        <header className="text-center mb-6">
+                        <header className="text-center mb-4">
                             <h2 className="font-bold text-3xl">Create account</h2>
                             <p>Wow, it's real this is your first time huh</p>
                         </header>
-                        <div className="flex flex-col mb-4">
-                            <label className="mb-2 uppercase font-bold">email address</label>
+                        <div className="flex flex-col mb-2">
+                            <label className="mb-2 uppercase font-bold text-sm">email address</label>
                             <input type={'email'} className="border border-black p-2 px-4 rounded-lg" required />
                         </div>
-                        <div className="flex flex-col mb-4">
-                            <label className="mb-2 uppercase font-bold">username</label>
+                        <div className="flex flex-col mb-2">
+                            <label className="mb-2 uppercase font-bold text-sm">username</label>
                             <input type={'text'} className="border border-black p-2 px-4 rounded-lg" required />
                         </div>
-                        <div className="flex flex-col mb-4">
-                            <label className="mb-2 uppercase font-bold">password</label>
+                        <div className="flex flex-col mb-2">
+                            <label className="mb-2 uppercase font-bold text-sm">password</label>
                             <input type={'password'} className="border border-black p-2 px-4 rounded-lg" required />
                         </div>
-                        <div className="relative">
-                            <label className="mb-2   uppercase font-bold">birthdate</label>
+                        <div className="relative mb-2">
+                            <label className="uppercase font-bold text-sm">birthdate</label>
                                 <DropdownDate 
                                     selectedDate={                    
                                         this.state.selectedDate        
@@ -53,49 +53,39 @@ export default class Register extends Component {
                                         DropdownComponent.year,
                                     ]}
                                     onDateChange={(date) => {
+                                        console.log(date);
                                         this.setState({ date: date, selectedDate: formatDate(date)})
                                     }}
                                     options={{
-                                        yearReverse: true,            
-                                        monthShort: true,             
-                                        monthCaps: true               
+                                        yearReverse: true,             
                                     }}
                                     classes={{
-                                        dateContainer: 'flex justify-between',
-                                        monthContainer: 'border border-black p-2 px-4 rounded-lg',
-                                        yearContainer: 'classes',
-                                        monthContainer: 'classes',
-                                        dayContainer: 'classes',
-                                        year: 'classes classes',
-                                        month: 'classes classes',
-                                        day: 'classes classes',
-                                        yearOptions: 'classes',
-                                        monthOptions: 'classes',
-                                        dayOptions: 'classes'
+                                        dateContainer: 'flex items-stretch',
+                                        monthContainer: 'w-full',
+                                        yearContainer: 'w-full',
+                                        monthContainer: 'w-full mr-4',
+                                        dayContainer: 'w-full mr-4',
+                                        year: 'bg-inherit border border-black p-2 px-4 rounded-lg w-full',
+                                        month: 'bg-inherit border border-black p-2 px-4 rounded-lg w-full',
+                                        day: 'bg-inherit border border-black p-2 px-4 rounded-lg w-full',
                                     }}
                                 />
 
                             </div>
-                        <div className="mb-4">
-                            <Link href="/forgotuser" className="text-red-500">
-                                Forgot password?
+                        <div className="mb-2">
+                            <Link href="/login" className="text-red-500 text-sm">
+                                Already have an account?
                             </Link>
                         </div>
                         <button className="w-full text-center bg-red-500 p-2 rounded-lg font-bold text-white mb-4">
                             Continue
                         </button>
-                        <div id="register-page">
-                            <span>
-                                Already have account?
-                                <Link href="/login" className="text-red-500 ml-1">
-                                    Login
-                                </Link>
-                            </span>
+                        <div id="register-page" className="text-sm">
+                            <span>By registering, you're about to follow the Guidelines and Privacy Policy.</span>
                         </div>
                     </form>
                 </main>
             </section>
         )
     }
-
 }

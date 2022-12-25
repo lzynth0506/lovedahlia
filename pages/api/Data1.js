@@ -9,14 +9,14 @@ export const ProductData = [
     {
         "id": "000012",
         "productImage": "/assets/annelisse.png",
-        "productTitle": "tite ka pa rin",
+        "productTitle": "La Vie En Rose",
         "productShortInfo": "flower2",
         "productPrice": "P500"
     },
     {
         "id": "000013",
         "productImage": "/assets/annelisse.png",
-        "productTitle": "tite ka pa rin",
+        "productTitle": "Blooming",
         "productShortInfo": "flower3",
         "productPrice": "P500"
     },
