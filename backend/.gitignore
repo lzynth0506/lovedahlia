@@ -1,0 +1,4 @@
+# ignoring large files
+
+/target/
+Cargo.lock
