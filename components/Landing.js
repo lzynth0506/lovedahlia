@@ -1,5 +1,4 @@
 import Image from "next/image"
-import { BsChevronDoubleRight }from "react-icons/bs"
 
 export default function Landing() {
     return (
@@ -23,11 +22,8 @@ export default function Landing() {
                     <header id="reasons" className="place-self-start">
                         <h2 className="font-bold text-4xl mb-4">Why LoveDahlia?</h2>
                     </header>
-                    <div id="reasons-info" className="flex items-center">
-                        <p>LoveDahlia is an e-commerce type of website that we're selling a variety of flowers to people who're spreading their love and appreciation (Tuason, 2022). As your one-step flower shop, LoveDahlia gives you the option to shop from all the top-rated florists across town. Our ever-growing list of young and passionate florists means you will have priority access to the latest trendyflower arrangements.</p>
-                        <button id="story-next" className="bg-white p-6 rounded-full">
-                            <BsChevronDoubleRight className="text-black text-3xl" />
-                        </button>
+                    <div id="reasons-info" className="">
+                        <p>LoveDahlia is an e-commerce type of website where we're selling a variety of flowers to people who're spreading their love and appreciation (Tuason, 2022). As your one-stop flower shop, LoveDahlia gives you the option to shop from all the top-rated florists across town. Our ever-growing list of young and passionate florists means you will have priority access to the latest trendy flower arrangements.</p>
                     </div>
                 </section>
             </aside>
@@ -35,8 +31,7 @@ export default function Landing() {
                 <aside className="grid grid-cols-2">
                     <div className="">
                         <h2 className="font-bold text-4xl mb-4">Never miss out</h2>
-                        <p>For all of the big discounts, solid promos for upcoming
-                        events such as valentines, birthdays and etc. With the rise of trendy styles and Pinterest-worthy florists around our towns, flower buyers are spoilt for choice. Shopping online gives you direct access to a whole spread offlorist selections with flower delivery options. Whether you are in Manila,Makati,Quezon City,Cebu,Davao and Las Pinas, or any large city, speed is vital for time-sensitive occasions like anniversaries, birthdays, and graduations. An online flower delivery shaves off precious time to get your gift anywhere in the Philippines.</p>
+                        <p>For all of the big discounts, solid promos for upcoming events such as Valentine's Day, birthdays, etc. Flower buyers are spoiled for choice, thanks to the rise of trendy styles and Pinterest-worthy florists in our towns. When you shop online, you have direct access to a wide range of florist selections with flower delivery options. Whether you are in Manila,  Makati, Quezon City,  Cebu, Davao, Las Pinas, or any large city, speed is vital for time-sensitive occasions like anniversaries, birthdays, and graduations. Online flower delivery shaves off precious time to get your gift anywhere in the Philippines.</p>
                     </div>
                     <div className="bg-gradient-to-l from-pinkish via-greykish to-darkish p-12 rounded-full justify-self-end">
                         <Image 

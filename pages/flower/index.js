@@ -3,10 +3,24 @@ import { GrSubtract } from "react-icons/gr"
 import { AiOutlinePlus } from "react-icons/ai"
 import Items from "../../components/ProductsArray"
 import Layout from "../../components/Layout"
+import { useState } from "react"
+import Modal from "../../components/Modal"
 
 export default function Flowers() {
+    const [quantity,setQuantity] = useState(1)
+
+    const Subtract = () => {
+        if (quantity > 1) {
+            setQuantity(prevcount => prevcount - 1)
+        }
+    }
+
+    const Add = () => {
+        setQuantity(prevcount => prevcount + 1)
+    }
+
     return (
-        <section class="container mx-auto px-12 p-12">
+        <section className="container mx-auto px-12 p-12">
             <main id="product-details">
                 <header className="bg-gradient-to-t from-[#F45C43] to-[#EB3349] p-12 rounded-2xl text-white mb-12">
                     <div id="productInfo">
@@ -43,16 +57,16 @@ export default function Flowers() {
                         </div>
                         <span className="font-bold text-2xl mb-4">Quantity</span>
                         <div id="quantity-ops" className="mb-4">
-                            <button className="border border-black p-3 rounded-lg mr-4">
+                            <button className="border border-black p-3 rounded-lg mr-4" onClick={Subtract}>
                                 <GrSubtract />
                             </button>
-                            <span className="mr-4">0</span>
-                            <button className="border border-black p-3 rounded-lg">
+                            <span className="mr-4">{quantity}</span>
+                            <button className="border border-black p-3 rounded-lg" onClick={Add}>
                                 <AiOutlinePlus />
                             </button>
                         </div>
                         <div id="product-price">
-                            <h2 className="font-bold text-3xl mb-4">P500</h2>
+                            <h2 className="font-bold text-3xl mb-4">{`P${"500" * quantity}`}</h2>
                             <button className="bg-red-500 text-white w-full p-4 rounded-lg font-bold mb-4">Add to Cart</button>
                         </div>
                         <div id="importance">
@@ -78,4 +92,4 @@ Flowers.getLayout = function getLayout(page) {
         {page}
       </Layout>
     )
-  }
+}

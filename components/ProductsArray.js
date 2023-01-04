@@ -21,9 +21,6 @@ export default function Items() {
                     <h2 className="font-bold text-2xl">{flower.productTitle}</h2>
                     <p className="mb-2 mt-2">{flower.productShortInfo}</p>
                 </div>
-                <div className="">
-                    <h2 className="font-bold text-2xl">{flower.productPrice}</h2>
-                </div>
             </div>
         </div>
         ))}

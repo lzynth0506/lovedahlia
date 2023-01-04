@@ -1,3 +1,7 @@
+/* bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 
+dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500*/
+
+
 import Link from "next/link";
 import { Component } from "react";
 import { DropdownDate, DropdownComponent } from "react-dropdown-date";
@@ -53,7 +57,6 @@ export default class Register extends Component {
                                         DropdownComponent.year,
                                     ]}
                                     onDateChange={(date) => {
-                                        console.log(date);
                                         this.setState({ date: date, selectedDate: formatDate(date)})
                                     }}
                                     options={{
@@ -61,7 +64,6 @@ export default class Register extends Component {
                                     }}
                                     classes={{
                                         dateContainer: 'flex items-stretch',
-                                        monthContainer: 'w-full',
                                         yearContainer: 'w-full',
                                         monthContainer: 'w-full mr-4',
                                         dayContainer: 'w-full mr-4',
@@ -70,7 +72,6 @@ export default class Register extends Component {
                                         day: 'bg-inherit border border-black p-2 px-4 rounded-lg w-full',
                                     }}
                                 />
-
                             </div>
                         <div className="mb-2">
                             <Link href="/login" className="text-red-500 text-sm">
@@ -81,7 +82,7 @@ export default class Register extends Component {
                             Continue
                         </button>
                         <div id="register-page" className="text-sm">
-                            <span>By registering, you're about to follow the Guidelines and Privacy Policy.</span>
+                            <span>By proceeding, you're about to follow the Guidelines and Privacy Policy.</span>
                         </div>
                     </form>
                 </main>

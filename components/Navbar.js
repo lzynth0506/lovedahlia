@@ -1,21 +1,33 @@
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useRouter } from "next/router";
+import Modal from "./Modal";
 
 export default function Navbar() {
     const [openTab, setOpenTab] = useState();
+    const [modalOpen, setModal] = useState(false);
+
+    useEffect(() => {
+        if (modalOpen) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "auto";
+        }
+    });
+
     const router = useRouter();
 
     return (
         <header className="border border-neutral-200">
             <nav className="container mx-auto flex items-center justify-between px-12 p-2">
                 <div id="logo">
-                    <Image src={"/assets/logo.svg"} 
-                    width="0" 
-                    height="0" 
-                    className="w-48 cursor-pointer"
-                    onClick={() => setOpenTab() + router.push("/")} 
-                    alt="hehe" 
+                    <Image 
+                        src={"/assets/logo.svg"} 
+                        width="0" 
+                        height="0" 
+                        className="w-48 cursor-pointer"
+                        onClick={() => setOpenTab() + router.push("/")} 
+                        alt="hehe" 
                     />
                 </div>
                 <div id="right-panel" className="inline-flex items-center">
@@ -39,12 +51,13 @@ export default function Navbar() {
                             Shop
                         </button>
                         <button
-                            onClick={() => router.push("/login")}
+                            onClick={() => setModal(true)}
                         >
                             Login
                         </button>
                     </div>
                 </div>
+                {modalOpen && <Modal />}
             </nav>
         </header>
     )
